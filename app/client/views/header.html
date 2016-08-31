@@ -5,10 +5,8 @@
             <img ng-src="{{global.LOGO}}" alt="LOGO" class="img-square img50_50">
         </span>  
             <a style="cursor: pointer">
-                <!-- <span class="logo-icon glyphicon glyphicon-fire"></span> -->
                 <span>{{main.brand}} </span>
             </a>
-            <!--<span>Dispatch Center Name</span>-->
     </div>
 
     <!-- needs to be put after logo to make it work -->
@@ -20,7 +18,7 @@
     <div class="top-nav">
         <ul class="nav-left list-unstyled">
             <li>
-                <a href="#/" data-toggle-nav-collapsed-min class="toggle-min"><i class="ti-menu"></i></a>
+                <a href="#/" class="toggle-min"><i class="ti-menu"></i></a>
             </li>
         </ul> 
         <ul class="nav-right pull-right list-unstyled">
@@ -31,19 +29,19 @@
                 </a>
                 <ul class="dropdown-menu with-arrow pull-right">
                     <li>
-                        <a ui-sref="manageProfile">
+                        <a>
                             <i class="ti-user"></i>
                             <span data-i18n="My Profile"></span>
                         </a>
                     </li>
                     <li>
-                        <a ui-sref="changePassword">
+                        <a>
                             <i class="ti-lock"></i>
                             <span data-i18n="Change Password"></span>
                         </a>
                     </li>
                     <li>
-                        <a ng-click="Logout()" ng-show="sessionService.isLoggedIn" style="cursor: pointer">
+                        <a ng-click="Logout()" style="cursor: pointer">
                             <i class="ti-export"></i>
                             <span data-i18n="Sign Out"></span>
                         </a>

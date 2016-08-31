@@ -1,7 +1,7 @@
 (function() {
   'use strict';
-    angular.module('app', ['ngRoute','ui.router','ui.bootstrap','ngResource','app.controllers', 'app.directives','app.nav','app.ui.form.directives'])
-            .config(function($stateProvider,$logProvider,$provide,$httpProvider,$ngBootboxConfigProvider) {
+    angular.module('app', ['ngRoute','ui.router','ui.bootstrap','ngResource','app.common', 'app.directives'])
+            .config(function($stateProvider,$logProvider,$provide,$httpProvider) {
                 $httpProvider.defaults.withCredentials = false;
                 $httpProvider.defaults.useXDomain = true;
                 $logProvider.debugEnabled(true);
@@ -50,7 +50,7 @@
                       templateUrl:'views/dashboard.html',
                       controller:'DashboardCtrl'
                 });
-          }).run(function ($window,$state,tokenStorage){
+          }).run(function ($window,$state){
                 function LogOut(){
 //                    $state.go('signin');
                 }
@@ -62,7 +62,7 @@
 //                    $ngBootbox.alert(exception.message);
                     $log.error(exception, cause);
                 };
-          }).factory('AuthorizationService', function ($log, $q, sessionService, $state) {
+          }).factory('AuthorizationService', function ($log, $q, $state) {
             return {
                 permissionCheck: function (roleCollection) {
                     var deferred = $q.defer();
